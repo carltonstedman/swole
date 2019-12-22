@@ -16,3 +16,9 @@ Installing development (including testing) dependencies can be achieve with pip:
 ```bash
 pip3.7 install -e .\[dev\]
 ```
+
+To run tests:
+
+```bash
+./test.sh
+```

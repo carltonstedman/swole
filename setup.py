@@ -10,16 +10,15 @@ with open('requirements.txt') as f:
     install_requirements = f.readline()
 
 test_requirements = [
-    'flake8>=3.7.9,<4',
+    'black>=19.10b0',
     'mypy>=0.761',
-    'pydocstyle>=5.0.1,<6',
     'pytest>=5.3.2,<5.4',
 ]
 
 dev_requirements = test_requirements + [
-    'black>=19.10b0',
     'coverage>=5.0,<6',
     'pdbpp>=0.10.2',
+    'pydocstyle>=5.0.1,<6',
     'pytest-cov>=2.8.1',
     'pytest-sugar>=0.9.2',
 ]
