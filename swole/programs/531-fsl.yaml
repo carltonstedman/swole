@@ -1,0 +1,72 @@
+---
+name: 5/3/1 + FSL
+mesos:
+  - name: leader1
+    micros: &leader
+      - name: w1
+        sessions:
+          - name: d1
+            sets:
+            - reps: 5
+              percent: 0.65
+            - reps: 5
+              percent: 0.75
+            - reps: 5
+              percent: 0.85
+              amrap: true
+          - name: d2
+            sets:
+            - reps: 5
+              sets: 5
+              percent: 0.65
+      - name: w2
+        sessions:
+          - name: d1
+            sets:
+            - reps: 3
+              percent: 0.7
+            - reps: 3
+              percent: 0.8
+            - reps: 3
+              percent: 0.9
+              amrap: true
+          - name: d2
+            sets:
+            - reps: 5
+              sets: 5
+              percent: 0.7
+      - name: w3
+        sessions:
+          - name: d1
+            sets:
+            - reps: 5
+              percent: 0.75
+            - reps: 3
+              percent: 0.85
+            - reps: 1
+              percent: 0.95
+              amrap: true
+          - name: d2
+            sets:
+            - reps: 5
+              sets: 5
+              percent: 0.75
+  - name: leader2
+    micros: *leader
+    tm_inc: 10
+  - name: deload
+    micros:
+      - name: w1
+        sessions:
+        - name: d1
+          sets:
+          - reps: 5
+            percent: 0.6
+          - reps: 3
+            percent: 0.7
+          - reps: 1
+            percent: 0.8
+    tm_inc: 10
+  - name: anchor
+    micros: *leader
+    tm_inc: 20
